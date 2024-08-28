@@ -1,0 +1,11 @@
+apiVersion: velero.io/v1
+kind: Backup
+metadata:
+  name: cakephp-mysql-persistent-backup
+  namespace: openshift-adp
+spec:
+  includedNamespaces:
+  - cakephp-mysql-persistent
+  storageLocation: njajodia-dpa-1
+  snapshotVolumes: true
+  ttl: 720h0m0s
