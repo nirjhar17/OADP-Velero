@@ -1,0 +1,10 @@
+apiVersion: velero.io/v1
+kind: Restore
+metadata:
+  name: restore-cakephp-mysql-persistent
+  namespace: openshift-adp
+spec:
+  backupName: cakephp-mysql-persistent-backup
+  restorePVs: true
+  includedNamespaces:
+  - cakephp-mysql-persistent
