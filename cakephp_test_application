@@ -1,0 +1,8 @@
+oc get template -n openshift | grep mysql-persistent && \
+oc get template cakephp-mysql-persistent -n openshift -o yaml > cakephp-mysql-persistent.yaml && \
+sed -i '/namespace: openshift/d' cakephp-mysql-persistent.yaml && \
+oc new-project cakephp-mysql-persistent && \
+oc create -f cakephp-mysql-persistent.yaml && \
+oc new-app --name=cakephp-mysql-persistent-app --template=cakephp-mysql-persistent 
+oc get all
+oc get route
