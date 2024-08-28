@@ -25,7 +25,7 @@ First, create a backup of the application:
    oc create -f backup.yaml
    oc get backup -n openshift-adp cakephp-mysql-persistent-backup -o jsonpath='{.status.phase}'
 
-### 1. Restore the Application
+### 2. Restore the Application
   ```
 oc create -f restore.yaml
 oc get restore -n openshift-adp restore-cakephp-mysql-persistent -o jsonpath='{.status.phase}'
